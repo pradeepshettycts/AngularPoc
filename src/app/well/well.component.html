@@ -1,0 +1,18 @@
+<form [formGroup]="wellDetailsForm" *ngIf="showForm">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" formControlName="name" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Type</label>
+        <input type="text" class="form-control" formControlName="type" id="exampleInputEmail1"
+            aria-describedby="emailHelp" placeholder="Enter Type">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Key</label>
+        <input type="number" class="form-control" formControlName="key" id="exampleInputEmail1"
+            aria-describedby="emailHelp">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="submitData()">Submit</button>
+</form>

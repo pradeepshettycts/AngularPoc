@@ -1,0 +1,20 @@
+<div *ngIf="showTable;else other_content">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #other_content>Data Not Found...</ng-template><br>
+<button type="button" class="btn btn-info" (click)="showUser(showTable)">{{showTable?'Hide user':'Show user'}}</button>

@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-8" style="background-color:lavender;">
+            <div class="card card-outline-primary mb-3" droppable [dragOverClass]="'drag-target-border-green'"
+                [dropScope]="'elements'" [dragHintClass]="'drag-hint'" (onDrop)="onVegetableDrop($event)">
+                <div class="card-header card-inverse card-primary">Drop Items here</div>
+                <ng-template appAddComp></ng-template>
+            </div>
+        </div>
+        <div class="col-sm-4" style="background-color:lavenderblush;">
+            <div class="card card-outline-success mb-3">
+                <div class="card-header card-inverse card-success">
+                    List Of Draggable Items
+                </div>
+                <div class="card-block scroll-list">
+                    <div class="list-group">
+                        <li class="list-group-item list-group-item-action list-group-item-success" [draggable]
+                            *ngFor="let item of elementsList" [dragClass]="'active'" [dragTransitClass]="'active'"
+                            [dragData]="item" [dragScope]="item.type" [dragEnabled]="dragEnabled">
+                            {{item.name}}
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

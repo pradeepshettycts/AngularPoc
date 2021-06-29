@@ -1,0 +1,19 @@
+
+<app-well [currentKey]="currentKey" (newWellData)="newWellData($event)"></app-well>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Key</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of wellData" (click)="getKey(user?.key)">
+            <td>{{user.name}}</td>
+            <td [ngClass]="getClass(user?.type)">{{user.type}}</td>
+            <!-- <td [ngClass]="{'red': (user?.key == 100), 'blue': (user?.key ==101)}">{{user.type}}</td> -->
+            <td [ngStyle]="{'color': user?.key == 100 ? 'red' : (user?.key == 101 ? 'blue' : null) }">{{user.key}}</td>
+        </tr>
+    </tbody>
+</table>
